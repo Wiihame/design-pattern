@@ -1,0 +1,21 @@
+{
+  "name": "design-pattern",
+  "version": "1.0.0",
+  "description": "Javascript Design Pattern",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wiihame/design-pattern.git"
+  },
+  "author": "Wiihame",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wiihame/design-pattern/issues"
+  },
+  "homepage": "https://github.com/Wiihame/design-pattern#readme",
+  "dependencies": {
+    "typescript": "^4.0.5"
+  }
+}
