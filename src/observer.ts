@@ -5,9 +5,9 @@
  * **/
 
 class Subject {
-  observer: Obverser[]
+  observer: Observer[]
   state: number
-  constructor(observer?: Obverser[], state?: number) {
+  constructor(observer?: Observer[], state?: number) {
     this.observer = observer
     this.state = state
   }
@@ -22,12 +22,12 @@ class Subject {
       observer.update()
     })
   }
-  attach(observer: Obverser) {
+  attach(observer: Observer) {
     this.observer.push(observer)
   }
 }
 
-class Obverser {
+class Observer {
   name: string
   subject: Subject
   constructor(name: string, subject: Subject) {
@@ -39,7 +39,7 @@ class Obverser {
 }
 
 const s = new Subject()
-let o1 = new Obverser('o1', s)
-let o2 = new Obverser('o2', s)
+let o1 = new Observer('o1', s)
+let o2 = new Observer('o2', s)
 
 s.setState(2)

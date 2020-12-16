@@ -11,10 +11,13 @@ class Gift {
 }
 
 class Agent {
-  constructor() {}
-  recieve(gift: Gift) {
-    reciever.listen(() => {
-      reciever.recieve(gift)
+  receiver: Receiver
+  constructor(receiver: Receiver) {
+    this.receiver = receiver
+  }
+  receive(gift: Gift) {
+    this.receiver.listen(() => {
+      this.receiver.receive(gift)
     })
   }
 }
@@ -23,12 +26,12 @@ class Sender {
   constructor() {}
   sendGift(target: Agent) {
     let gift = new Gift('flower')
-    target.recieve(gift)
+    target.receive(gift)
   }
 }
-class Reciever {
+class Receiver {
   constructor() {}
-  recieve(gift: Gift) {
+  receive(gift: Gift) {
     console.log(`revieve ${gift.name}`)
   }
   listen(fn: () => void) {
@@ -40,7 +43,7 @@ class Reciever {
 }
 
 const sender = new Sender()
-const reciever = new Reciever()
-const agent = new Agent()
+const receiver = new Receiver()
+const agent = new Agent(receiver)
 
 sender.sendGift(agent)
